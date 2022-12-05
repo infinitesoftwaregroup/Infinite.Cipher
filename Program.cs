@@ -5,8 +5,8 @@ using McMaster.Extensions.CommandLineUtils;
 namespace Infinite.Cipher
 {
     [Command(
-        Name = "Cipher",
-        FullName = "Cipher",
+        Name = "CipherTool",
+        FullName = "CipherTool",
         Description = "A tool to encrypt and decrypt files using AES-256-GCM encryption."
     )]
     [Subcommand(typeof(Commands.GenerateKeyCommand))]

@@ -18,10 +18,10 @@ dotnet tool install -g Infinite.Cipher
 
 ## Usage
 
-Once installed you can call Cipher from the command line:
+Once installed you can call Infinite.Cipher from the command line:
 
 ```bash
-Cipher --help
+CipherTool --help
 ```
 
 > You can use the --help option to get more details about the commands and
@@ -32,10 +32,10 @@ their options.
 > Creating a new encryption key is as easy as typing:
 
 ```bash
-Cipher generate
+CipherTool generate
 ```
 
-Cipher will output the encryption key in the console.
+CipherTool will output the encryption key in the console.
 
 The encryption key should be stored securely. Each of your projects/products should have it's own unique key if the key is used to encrypt a configuration file. Never check the encryption key into a source control.
 
@@ -43,7 +43,7 @@ The encryption key should be stored securely. Each of your projects/products sho
 
 You can encrypt a file using the following command:
 
-Usage: `Cipher encrypt -k {Key} {FileName}`
+Usage: `CipherTool encrypt -k {Key} {FileName}`
 
 The file is replaced. Add the `-c` option to output the encrypted content to your console instead of writing to the file system.
 
@@ -51,7 +51,7 @@ The file is replaced. Add the `-c` option to output the encrypted content to you
 
 You can decrypt a file using the following command:
 
-Usage: `Cipher decrypt -k {Key} {FileName}`
+Usage: `CipherTool decrypt -k {Key} {FileName}`
 
 The file is replaced. Add the `-c` option to output the decrypted content to your console instead of writing to the file system.
 
