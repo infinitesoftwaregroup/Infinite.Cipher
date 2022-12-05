@@ -1,11 +1,11 @@
 # :rat::closed_lock_with_key: Infinite
 
-![forthebadge](.github/images/made-with-c-sharp.svg)
-![forthebadge](.github/images/built-with-love.svg)
+![forthebadge](https://raw.githubusercontent.com/infinitesoftwaregroup/Infinite.Cipher/main/.github/images/made-with-c-sharp.svg)
+![forthebadge](https://raw.githubusercontent.com/infinitesoftwaregroup/Infinite.Cipher/main/.github/images/built-with-love.svg)
 
 A .NET Core Tool to encrypt and decrypt files using AEAD AES-256-GCM, as well as generate an encryption key.
 
-The tool was created to help encrypt configuration files for use with the .NET Core projects using the [Infinite.EncryptedJson](https://github.com/infinitesoftwaregroup/Infinite.EncryptedJson.git) library. Infinite can be used as a stand-alone tool to encrypt and decrypt files.
+The tool was created to help encrypt configuration files for use with the .NET Core projects using the [Infinite.AddEncryptedJsonToConfiguration](https://github.com/infinitesoftwaregroup/Infinite.AddEncryptedJsonToConfiguration.git) library. Infinite can be used as a stand-alone tool to encrypt and decrypt files.
 
 ## Installation
 
