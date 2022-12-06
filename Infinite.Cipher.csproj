@@ -10,13 +10,15 @@
     <PackageId>Infinite.Cipher</PackageId>
     <Description>🐀🔐 A .NET Global Tool to quickly encrypt and decrypt files using AES-256-GCM</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/infinitesoftwaregroup/Infinite</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/infinitesoftwaregroup/Infinite</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/infinitesoftwaregroup/Infinite.Cipher</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/infinitesoftwaregroup/Infinite.Cipher</RepositoryUrl>
     <Version>3.1.0</Version>
     <Company>Infinite Software</Company>
     <Product>Infinite</Product>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Title>Encrypt/Decrypt Files</Title>
+    <AssemblyName>CipherTool</AssemblyName>
+    <PackageVersion>3.1.1</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
