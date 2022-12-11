@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using Infinite.Cipher.Commands;
 using McMaster.Extensions.CommandLineUtils;
 
 namespace Infinite.Cipher
@@ -7,11 +8,11 @@ namespace Infinite.Cipher
     [Command(
         Name = "CipherTool",
         FullName = "CipherTool",
-        Description = "A tool to encrypt and decrypt files using AES-256-GCM encryption."
+        Description = "A tool to encrypt and decrypt files using AES encryption."
     )]
-    [Subcommand(typeof(Commands.GenerateKeyCommand))]
-    [Subcommand(typeof(Commands.EncryptCommand))]
-    [Subcommand(typeof(Commands.DecryptCommand))]
+    [Subcommand(typeof(GenerateKeyCommand))]
+    [Subcommand(typeof(EncryptCommand))]
+    [Subcommand(typeof(DecryptCommand))]
     public class Program
     {
         public static int Main(string[] args)

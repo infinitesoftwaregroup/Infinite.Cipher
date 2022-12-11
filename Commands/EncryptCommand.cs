@@ -1,18 +1,15 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
-using System.Text;
-using Infinite.Cipher.libs.CryptHash.Net;
+using System.Security.Cryptography;
 using McMaster.Extensions.CommandLineUtils;
 
 namespace Infinite.Cipher.Commands
 {
-    [Command(name: "encrypt", Description = "Encrypt a file using AES-256-GCM.")]
+    [Command(name: "encrypt", Description = "Encrypt a file using AES.")]
     public class EncryptCommand
     {
-        [Argument(0)]
-        [Required]
-        [FileExists]
+        [Argument(0)] [Required] [FileExists] 
         public string FileName { get; set; }
 
         [Option("-k", Description = "Required. The encryption key.")]
@@ -26,18 +23,23 @@ namespace Infinite.Cipher.Commands
         {
             try
             {
-                var text = Encoding.UTF8.GetBytes(File.ReadAllText(FileName));
+                var text = File.ReadAllText(FileName);
                 var key = Convert.FromBase64String(Key);
 
-                var aes = new AEAD_AES_256_GCM();
-                var result = Convert.ToBase64String(aes.EncryptString(text, key));
+                using var myAes = Aes.Create();
+                myAes.Key = key;
+                myAes.IV = new byte[16];
+
+                // Encrypt the string to an array of bytes.
+                var encrypted = CipherTool.EncryptStringToBytes_Aes(text, myAes.Key, myAes.IV);
+                var result = Convert.ToBase64String(encrypted);
 
                 if (ConsoleOnly)
                 {
                     Console.WriteLine(result);
                 }
                 else
-                { 
+                {
                     File.WriteAllText(FileName, result);
                     Console.WriteLine($"Wrote {result.Length} bytes to {Path.GetFileName(FileName)}.");
                 }
