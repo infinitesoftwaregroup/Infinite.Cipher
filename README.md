@@ -9,7 +9,7 @@ The tool was created to help encrypt configuration files for use with the .NET C
 
 ## Installation
 
-Download and install the [.NET Core 3.1 SDK](https://www.microsoft.com/net/download)
+Download and install the [.NET Core 6.0 SDK](https://www.microsoft.com/net/download)
 or newer. Once installed, run the following command to run OtterKeys:
 
 ```bash
@@ -54,7 +54,3 @@ You can decrypt a file using the following command:
 Usage: `CipherTool decrypt -k {Key} {FileName}`
 
 The file is replaced. Add the `-c` option to output the decrypted content to your console instead of writing to the file system.
-
-## Acknowledgements
-
-Infinite.Cipher uses some of the encryption code from the [CryptHash.NET](https://github.com/alecgn/crypthash-net/) (MIT license) library for it's AES-256-GCM operations.
