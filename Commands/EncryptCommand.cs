@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using McMaster.Extensions.CommandLineUtils;
 
@@ -28,7 +29,7 @@ namespace Infinite.Cipher.Commands
 
                 using var myAes = Aes.Create();
                 myAes.Key = key;
-                myAes.IV = new byte[16];
+                myAes.IV = key[8..12].Concat(key[4..8]).Concat(key[12..16]).Concat(key[0..4]).ToArray();
 
                 // Encrypt the string to an array of bytes.
                 var encrypted = CipherTool.EncryptStringToBytes_Aes(text, myAes.Key, myAes.IV);
